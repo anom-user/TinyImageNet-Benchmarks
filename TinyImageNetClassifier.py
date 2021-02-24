@@ -16,8 +16,7 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tfrecords_helper import get_batch
 
 class Classifier:
-    def __init__(self, model_name):
-        #tf.reset_default_graph()
+    def __init__(self, model_name): #tf.reset_default_graph()
 	tf.compat.v1.reset_default_graph()
         self.input_dims = config.input_dims
         self.num_classes = config.num_classes
