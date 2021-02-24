@@ -193,9 +193,9 @@ class Classifier:
         
         ### Placeholder definitions ### tf.compat.v1.placeholder()
         x = tf.compat.v1.placeholder(shape=[None, self.input_dims[0], self.input_dims[1], 3], dtype=tf.float32, name='input')
-        label = tf.placeholder(shape=[None, self.num_classes], dtype=tf.float32, name='label')
-        is_training = tf.placeholder(dtype=tf.bool, name='is_training')
-        lr = tf.placeholder(dtype=tf.float32, name='learning_rate')
+        label = tf.compat.v1.placeholder(shape=[None, self.num_classes], dtype=tf.float32, name='label')
+        is_training = tf.compat.v1.placeholder(dtype=tf.bool, name='is_training')
+        lr = tf.compat.v1.placeholder(dtype=tf.float32, name='learning_rate')
         
         ### Model definitions ###
         logits, output = self.model(x, is_training)
