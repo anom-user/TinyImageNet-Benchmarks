@@ -190,8 +190,8 @@ class Classifier:
             if self.model_name in model_file.lower():
                 shutil.copy2(model_file, summaries_path + "/models/")
         
-        ### Placeholder definitions ###
-        x = tf.placeholder(shape=[None, self.input_dims[0], self.input_dims[1], 3], dtype=tf.float32, name='input')
+        ### Placeholder definitions ### tf.compat.v1.placeholder()
+        x = tf.compat.v1.placeholder(shape=[None, self.input_dims[0], self.input_dims[1], 3], dtype=tf.float32, name='input')
         label = tf.placeholder(shape=[None, self.num_classes], dtype=tf.float32, name='label')
         is_training = tf.placeholder(dtype=tf.bool, name='is_training')
         lr = tf.placeholder(dtype=tf.float32, name='learning_rate')
