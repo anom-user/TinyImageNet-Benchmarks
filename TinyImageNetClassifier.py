@@ -14,6 +14,7 @@ import config
 import tensorflow as tf
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tfrecords_helper import get_batch
+tf.compat.v1.disable_eager_execution() 
 
 class Classifier:
     def __init__(self, model_name): #tf.reset_default_graph()
